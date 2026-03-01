@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { CiLock } from "react-icons/ci";
 import main_photo from "./assets/main_photo.jpg"
 import Description from './components/description';

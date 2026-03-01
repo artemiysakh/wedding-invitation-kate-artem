@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import InvitationForm from '../form';
 import Calendar from './calendar';
 import inform_img from '../assets/information.jpg'
