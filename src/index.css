@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400..700&family=Great+Vibes&family=Open+Sans:wght@300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Betania+Patmos&family=Betania+Patmos+In&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Betania+Patmos&family=Betania+Patmos+In&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.front{
+  height:100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  background-color: #EDC5CD;
+  overflow: hidden;
+}
+
+.unlock_string{
+  color:#FFF3D7;
+  font-family: "Great Vibes", cursive;
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
+}
+.div-image {
+  border: 6px #FFF3D7 solid;
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 400/550;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
+  
+}
+
+/* Класс для анимации */
+.div-image.animating {
+  animation: expandToFull 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  z-index: 9999;
+}
+
+
+@keyframes expandToFull {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    border: 6px solid #FFF3D7;
+    border-radius: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(var(--scale));
+    border: none;
+  }
+}
+
+/* После анимации изображение становится на место */
+.div-image.expanded {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  height: 100vh !important;
+  max-width: 100% !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  border: none !important;
+  animation: none !important;
+}
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.overlay-gradient {
+  background: linear-gradient(135deg,
+    rgba(183, 110, 121, 0.25) 0%,
+    rgba(246, 158, 175, 0.16) 50%,
+    rgba(183, 110, 121, 0.25) 100%
+  );
+}
+.background-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px #FFF3D7 solid;
+  background-color: transparent;
+  margin-left: -48px;
+  margin-top: 5px; 
+}
+
+#description_div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto;
+}
+.title_section{
+  text-align: center;
+  font-family: 'Playfair Display', cursive;
+  font-size: 38px;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color:#f19eaf;
+}
+.text-greeting{
+  text-align:justify;
+  margin: 15px 10px;
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  min-width: 250px; 
+  max-width: 400px;
+  @media (max-width:600px) {
+    font-size: 24px;
+  }
+}
+
+.calendar{
+  border-collapse: 'collapse'; 
+  text-align: 'center'; 
+  font-family: 'sans-serif';
+}
+.calendar td, 
+.calendar th {
+  border: none;  
+  padding: 8px;
+  font-size: 20px;
+}
+.calendar th {
+  color:#f19eaf;
+}
+.special-day {
+    position: relative;
+    color: #f19eaf;
+    font-weight: bold;
+}
+
+.day-number {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+#heart{
+   position: absolute;
+    top: 60%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: #f19eaf;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+#inform_img{
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+#shedule_img{
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 20px;
+  margin-top: 30px;
+  @media (max-width: 500px) {
+    left: 0px;
+  }
+}
+
+.names-overlay {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  text-align: center;
+  color: #FFF3D7;
+  transform: translateY(100%);
+  transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 40px 20px;
+  pointer-events: none;
+}
+
+.names-overlay.visible {
+  transform: translateY(-50%);
+  display: block;
+}
+
+/* Контейнер для имен */
+.names-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* Стили для имен */
+.name {
+  font-family: 'Playfair Display', cursive;
+  font-size: clamp(32px, 8vw, 72px);
+  font-weight: 100;
+  opacity: 0;
+  animation: fadeInName 0.8s ease forwards;
+}
+
+.name.bride {
+  color: #E9E2D3; 
+  animation-delay: 0.2s;
+}
+
+.name.groom {
+  color: #E9E2D3; 
+  animation-delay: 0.4s;
+}
+
+/* Амперсанд */
+.ampersand {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(40px, 10vw, 84px);
+  margin: auto 20px;
+  font-weight: 300;
+  color: #E9E2D3;
+  opacity: 0;
+  animation: fadeInName 0.8s ease 0.3s forwards;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.ampersand:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+
+/* Дата */
+.date-line {
+  font-family: 'Great Vibes', sans-serif;
+  font-size: clamp(18px, 4vw, 28px);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #FFF3D7;
+  opacity: 0;
+  animation: fadeInName 0.8s ease 0.6s forwards;
+  margin-top: 10px;
+}
+
+/* Анимация появления */
+@keyframes fadeInName {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Дополнительные эффекты для изображения */
+.div-image {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .names-container {
+    gap: 10px;
+  }
+  
+  .name {
+    font-size: 36px;
+  }
+  
+  .ampersand {
+    font-size: 42px;
+  }
+  
+  .date-line {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+  
+  .names-overlay {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .names-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .name {
+    font-size: 32px;
+  }
+  
+  .ampersand {
+    font-size: 36px;
+    margin: -10px 0;
+  }
+  
+  .date-line {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+}
+
+#dress-code{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dress-code-color{
+  width: 70px;
+  height: 32px;
+  margin: auto 3px;
+}
+.numbers_phone{
+  margin: 15px auto;
+  font-size: 22px;
+   font-family: 'Playfair Display'
+}
