@@ -21,7 +21,7 @@ export default function Description() {
          <div className='section'>
             <h2 className='title_section'>ПРОГРАММА</h2>
             <h2 className='title_section'>ДНЯ</h2>
-            <img src={shedule_img} id='shedule_img'></img>
+            <img src={shedule_img} id='shedule_img' alt="расписание"></img>
         </div>
         <div className='section'>
             <h2 className='title_section'>МЕСТО</h2>
@@ -31,7 +31,7 @@ export default function Description() {
         </div>
         <div className='section'>
             <h2 className='title_section' style={{marginBottom:'20px'}}>ДЕТАЛИ</h2>
-            <img src={inform_img} id='inform_img'></img>
+            <img src={inform_img} id='inform_img' alt="информация"></img>
         </div>
         <div className='section'>
             <h2 className='title_section'>ДРЕСС-КОД</h2>
